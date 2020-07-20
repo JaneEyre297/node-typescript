@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+import action from "../actions/action";
+
 const program = require('commander');
 
 program
@@ -7,9 +9,7 @@ program
   .option('-p --path [path]', '上传指定目录资源到CDN')
   .option('-f --file <filename>', '上传指定资源到CDN')
   .command('push')
-  .action(function() {
-      console.log(222)
-  })
+  .action(action)
 
 program.parse(process.argv);
 
