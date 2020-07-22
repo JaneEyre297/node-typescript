@@ -1,12 +1,12 @@
 {
   "name": "node-typescript-hi",
-  "version": "0.0.2",
+  "version": "0.0.6",
   "description": "Minimalistic boilerplate to quick-start Node.js development in TypeScript.",
   "engines": {
     "node": ">= 12.13 <13"
   },
   "bin": {
-    "hi": "./dist/main.js"
+    "hi": "./src/main.js"
   },
   "devDependencies": {
     "@types/jest": "~26.0.0",
@@ -27,6 +27,8 @@
     "clean": "rimraf coverage build tmp",
     "build": "tsc",
     "build:watch": "tsc -w",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run test && npm run lint",
     "release": "npm run build && npm publish",
     "lint": "eslint . --ext .ts,.tsx",
     "test": "jest --coverage",
